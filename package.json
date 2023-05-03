@@ -38,6 +38,7 @@
     "path": false
   },
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "@types/react-toastify": "^4.1.0"
   }
 }

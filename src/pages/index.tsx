@@ -275,7 +275,7 @@ export default function Home() {
     return (
       <>
         <RenderMoviesList currentItems={currentItems} />
-        <Pagination count={pageCount} page={page} onChange={handleChange} />
+        <Pagination count={pageCount} page={page} onChange={() =>handleChange} />
       </>
     );
   }
