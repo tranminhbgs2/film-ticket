@@ -19,7 +19,7 @@ header{
   position: fixed !important;
   top: 0;
   width: 100% !important;
-  z-index: 10000;
+  z-index: 9999;
 }
 nav {
   margin: 10px auto 20px;
@@ -118,4 +118,7 @@ footer {
 }
 .active button{
   color: orange !important;
+}
+.Toastify__toast{
+  z-index: 11111 !important;
 }

@@ -12,7 +12,6 @@ function useGetMovies() {
   return {
     movies: data?.data,
     totalCount: data?.total,
-    pageCount: data?.data._meta.pageCount,
     currentPage: data?.current_page,
     perPage: data?.per_page,
     isLoading: !error && !data,

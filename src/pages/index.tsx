@@ -284,7 +284,7 @@ export default function Home() {
       <Head>
         <title>Book My Ticket | Home</title>
       </Head>
-      <Carousel sx={{top:"90px"}}>
+      <Carousel>
         {items.map((item, i) => (
           <Link key={item.id} href={item.url}>
             <img
@@ -297,7 +297,7 @@ export default function Home() {
           </Link>
         ))}
       </Carousel>
-      <Container id="recommended">
+      <Container id="recommended" sx={{paddingTop: "90px"}}>
         <h1 className={styles.title}>Recommended Movies</h1>
         <Box
           sx={{
@@ -336,16 +336,17 @@ export default function Home() {
           {/* <RenderMoviesList /> */}
           <PaginationControlled itemsPerPage={8} />
         </Grid>
-        <Box sx={{ paddingTop: "5px" }} id="special">
-          <h1 className={styles.title}>Special Movie</h1>
+          <p id="special"></p>
+        <Box sx={{ paddingTop: "5px" }} >
+          <h1 className={styles.title} >Special Movie</h1>
         </Box>
         <Grid container spacing={2} sx={{ marginLeft: "0", width: "100%" }}>
           <RenderMoviesHotList />
         </Grid>
-        <Box sx={{ paddingTop: "5px" }} id="new-movie">
+        <Box sx={{ paddingTop: "5px" }} >
           <h1 className={styles.title}>New Movie In Theaters</h1>
         </Box>
-        <Grid container spacing={2} sx={{ marginLeft: "0", width: "100%" }}>
+        <Grid container spacing={2} sx={{ marginLeft: "0", width: "100%" }} id="new-movie">
           <RenderMoviesListNews />
         </Grid>
         <Box className="box_top">

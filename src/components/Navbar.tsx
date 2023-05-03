@@ -29,7 +29,7 @@ import { useRouter } from "next/router";
 const pages = [
   {
     name: "Home",
-    link: '/'
+    link: '/#top'
   },
   {
     name: "Login",
@@ -151,7 +151,7 @@ const Navbar = () => {
           </Button>
         </DialogActions>
       </Dialog>
-      <AppBar sx={{backgroundColor: 'white', pb:'10px', pt: '10px'}} position="static">
+      <AppBar sx={{backgroundColor: 'white', pb:'10px', pt: '10px'}} position="static"  id="main">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Link href="/">
