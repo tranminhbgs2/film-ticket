@@ -1,0 +1,51 @@
+.title {
+  color: #333;
+  text-align: left;
+}
+.text {
+  color: #777;
+}
+.btn {
+  display: block;
+  width: 150px;
+  padding: 8px 0;
+  margin: 20px auto;
+  background: #4979ff;
+  border-radius: 4px;
+  color: white;
+  text-align: center;
+}
+.movieTitle {
+  color: #4b4b4b;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 0 10px;
+  margin-top: 8px;
+  text-align: left;
+}
+.card {
+  cursor: pointer;
+  background: #fff;
+  padding: 20px;
+  text-align: center;
+  margin: 20px 10px 0 10px;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 11%), 0 6px 20px 0 rgb(0 0 0 / 14%);
+}
+.movieLanguage {
+  color: #777;
+  font-weight: 700;
+  text-align: left;
+  padding: 10px;
+}
+.moviesContainer {
+  margin: 0 auto;
+  text-align: center;
+  width: 80%;
+}
+.addMovieButton {
+  margin-bottom: 30px;
+  background: #4979ff;
+}
+.css-1f8sh1y {
+  top: 90px;
+}

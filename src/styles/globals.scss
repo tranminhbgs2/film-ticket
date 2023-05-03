@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+  background: #f2f2f2;
+  color: #333;
+  // font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+.content {
+  max-width: 80%;
+  margin: 0 auto;
+}
+header{
+  position: fixed !important;
+  top: 0;
+  width: 100% !important;
+  z-index: 10000;
+}
+nav {
+  margin: 10px auto 20px;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.box_top {
+  display: flex;
+  justify-content: end;
+  margin-top: 15px;
+}
+.banner_img {
+  max-height: 696px;
+  min-height: 696px;
+}
+
+.img_film:hover {
+  /* color: orange; */
+  transition: all 1s;
+  transform: scale(1.1);
+}
+
+.box_img--film {
+  height: 375px;
+  overflow: hidden;
+}
+
+.box_film {
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.box_film:hover .Home_movieTitle__PxCja {
+  color: orange;
+}
+.box_film:hover .Details_movieTitle__BIq2b {
+  color: orange;
+}
+.css-isbt42>.MuiGrid-item {
+  /* padding-left: 16px; */
+  text-align: center;
+  margin: 30px 0;
+  padding: 15px;
+}
+.box_film img {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+
+@media only screen and (min-width:280px) and (max-width:1280px) {
+  .content {
+    max-width: 95%;
+    margin: 0 auto;
+  }
+  nav {
+    flex-wrap: wrap;
+  }
+  .box_film {
+    text-align: center;
+  }
+}
+nav a {
+  margin-left: 20px;
+}
+nav .logo {
+  margin-right: auto;
+  cursor: pointer;
+}
+.logo-text {
+  margin:auto
+}
+footer {
+  display: block;
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 60px;
+  color: #777;
+  border-top: 1px solid #eaeaea;
+}
+.not-found {
+  text-align: center;
+}
+.not-found a{
+  color: #4979ff;
+}
+
+@media only screen and  (max-width:500px) {
+
+  .banner_img {
+    min-height:auto
+  }
+}
+.active button{
+  color: orange !important;
+}
