@@ -19,9 +19,7 @@ import {
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
-import ReactPaginate from 'react-paginate';
 import Pagination from '@mui/material/Pagination';
-import Stack from '@mui/material/Stack';
 
 export default function Home() {
   const [visible, setVisible] = useState(false);
@@ -52,6 +50,8 @@ export default function Home() {
   const [searchValue, setSearchValue] = useState("");
   const [valueFilm, setValue] = useState<any>();
   const [isLoading, setIsLoading] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
+
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setShowClearIcon(event.target.value === "" ? "none" : "flex");
     setSearchValue(event.target.value);
@@ -258,26 +258,37 @@ export default function Home() {
     // Here we use item offsets; we could also use page offsets
     // following the API or data you're working with.
     const [itemOffset, setItemOffset] = useState(0);
+    const [lenghtCount, setLenghtCount] = useState(0);
     const [page, setPage] = React.useState(1);
   
     useEffect(() => {
       // Fetch items from another resources.
       const endOffset = itemOffset + itemsPerPage;
-      setCurrentItems(movies.slice(itemOffset, endOffset));
-      setPageCount(Math.ceil(movies.length / itemsPerPage));
+      let itemMovies = []
+      if(valueFilm && valueFilm.length > 0) {
+        itemMovies = valueFilm
+        setCurrentItems(itemMovies.slice(itemOffset, endOffset));
+        setPageCount(Math.ceil(itemMovies.length / itemsPerPage));
+      }
+      setLenghtCount(itemMovies.length)
     }, [itemOffset, itemsPerPage]);
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>, value: number) => {
-      const newOffset = (value - 1) * itemsPerPage % movies.length;
+      const newOffset = (value - 1) * itemsPerPage % itemMovies.length;
       setItemOffset(newOffset);
       setPage(value);
     };
-  
-    return (
-      <>
-        <RenderMoviesList currentItems={currentItems} />
-        <Pagination count={pageCount} page={page} onChange={() =>handleChange} />
-      </>
-    );
+    if(lenghtCount > 1) {
+      return (
+        <>
+          <RenderMoviesList currentItems={currentItems} />
+          <Pagination count={pageCount} page={page} onChange={() =>handleChange} />
+        </>
+      );
+    } else {
+      return (
+          <RenderMoviesList currentItems={currentItems} />
+      );
+    }
   }
   return (
     <>
@@ -311,18 +322,23 @@ export default function Home() {
               size="small"
               variant="outlined"
               onChange={(e: any) => handleChange(e)}
+              onKeyPress={event => {
+                if (event.key === 'Enter') {
+                  setOpen(true)
+                }
+              }}
               value={searchValue}
               placeholder="Search Film"
               InputProps={{
                 startAdornment: (
-                  <InputAdornment position="start">
+                  <InputAdornment onClick={() => setOpen(true)} style={{  cursor: 'pointer' }} position="start">
                     <SearchIcon />
                   </InputAdornment>
                 ),
                 endAdornment: (
                   <InputAdornment
                     position="end"
-                    style={{ display: showClearIcon }}
+                    style={{ display: showClearIcon, cursor: 'pointer'  }}
                     onClick={handleClick}
                   >
                     <ClearIcon />

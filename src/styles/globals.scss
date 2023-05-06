@@ -54,6 +54,7 @@ nav {
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   border-radius: 10px;
   overflow: hidden;
+  height: 100%;
 }
 .box_film:hover .Home_movieTitle__PxCja {
   color: orange;
@@ -121,4 +122,14 @@ footer {
 }
 .Toastify__toast{
   z-index: 11111 !important;
+}
+
+.css-1oj2twp-MuiPagination-root{
+  width: 100%;
+  display: block;
+}
+.css-wjh20t-MuiPagination-ul{
+  display: flex;
+  align-content: center;
+  justify-content: center;
 }
