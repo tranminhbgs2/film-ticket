@@ -273,7 +273,7 @@ export default function Home() {
       setLenghtCount(itemMovies.length)
     }, [itemOffset, itemsPerPage]);
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>, value: number) => {
-      const newOffset = (value - 1) * itemsPerPage % itemMovies.length;
+      const newOffset = (value - 1) * itemsPerPage % lenghtCount;
       setItemOffset(newOffset);
       setPage(value);
     };
